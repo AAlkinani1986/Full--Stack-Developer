@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline JavaScript</title>
+    <style>
+        main{
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
+        .info{
+
+            text-align: center;
+            max-width: 50rem;
+            font-size: 1.4rem;
+            border: 3px solid black;
+            padding: 0.5rem 2rem 1rem;
+            margin: 1rem;
+            line-height: 1.5;
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="info">
+            <h1>Inline JavaScript</h1>
+            <p>
+                You can write JavaScript directly inside an HTML document using
+               the <code>script</code>element. The element can be added in the 
+               <code>head</code>section or inside the <code>body</code>element.
+            </p>
+        </div>
+    </main>
+    <script>
+        const allCode = document.querySelectorAll("code");
+        for(let item of allCode){
+            item.innerHTML=` &#128513; ${item.innerHTML} &#128513 `;
+        }
+    </script>
+</body>
+</html>
