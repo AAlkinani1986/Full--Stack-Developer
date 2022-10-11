@@ -1,0 +1,213 @@
+/*
+COLOR PALETTE
+https://coolors.co/f7fff7-343434-2f3061-ffe66d-a1c6d7
+#F7FFF7 - almost white
+#343434 - dark gray - almost black
+#2F3061 - blue dark
+#FFE66D - yellow
+#A1C6D7 - blue light
+*/
+
+:root{
+    --blue-dark: #2f3061;
+    --dark-gray:#343434;
+    --yellow: #ffE66D;
+    --blue-light: #A1C6D7;
+    --white:#f7fff7;
+}
+/* Global Style 
+----------------------------------------*/
+html{
+    box-sizing:border-box;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+body{
+    color:var(--dark-gray);
+    margin: 0px;
+    padding:0;
+    font-size:15px;
+    line-height:1.5;
+   font-family: 'Montserrat', sans-serif;
+}
+img{
+    width: 300px;
+}
+
+a{
+    color : var(--yellow);
+}
+ a:hover{
+    text-decoration: none;
+}
+h1{
+    line-height:1;
+    font-size:100px;
+}
+h2{
+    font-size: 45px;
+  
+}
+h1 , h2 {
+   margin:0;
+    font-family: 'Caveat', cursive;
+    font-weight:400;
+}
+.content-wrap{
+    max-width: 800px;
+    width: 85%;
+    margin: 0 auto;
+    padding: 30px;
+}
+h3{
+    margin-bottom: 0;
+}
+.wrap-details h3+p{
+  font-style: italic ;
+}
+.wrap-details h3~p{
+    margin: 0;
+}
+.divider > section{
+    padding: 20px 0;
+    border-bottom:2px dashed var(--dark-gray);
+}
+.divider > section:last-of-type{
+
+    border-bottom: none;
+}
+/* Profile 
+---------------------------------------- */
+header{
+    background:var(--blue-dark);
+    color: var(--white);
+
+}
+    
+
+/* Projects
+------------------------------- */
+.projects{
+   
+background:var(--white);
+
+}
+.projects a{
+    color: var(--blue-dark);
+}
+.projects .btn{
+    color: var(--white);
+    background:var(--blue-dark);
+    text-decoration: none;
+    padding: 8px;
+    margin: 1px 5px;
+    border-radius: 6px;
+    display: inline-block;
+    box-shadow: 0px 3px 2px 4px var(--blue-light);
+
+}
+.projects .btn:hover {
+    background: rgba(47, 48, 97, 80%);
+  }
+  /* project Items
+  ------------------------------------ */
+  .project-item{
+      overflow:hidden;
+      }
+
+
+  
+  /* Work Experience
+  ------------------------------------*/
+  .experience {
+    background:var(--blue-light);
+  }
+  
+
+  /* Education
+  ------------------------------------*/
+ .education{
+     background-image: url(../Images/joanna-kosinska-unsplash.jpg);
+     background-size: cover;
+     background-position: top right;
+     padding: 100px;
+ }
+  .education p{
+    color:#f7fff7;
+      
+  }
+  
+  /* Contact Info
+  ------------------------------------*/
+  footer {
+    background:var(--dark-gray) ;
+    color: var(--white);
+    
+  }
+  .contact-list{
+     list-style-type: none;
+      
+  }
+  .contact-list a{
+      padding: 15px;
+      display: inline-block;
+      
+  }
+/* @ responsive design */
+@media screen and (min-width:940px){
+    header, footer{
+        text-align: center;
+    }
+    .project-item img{
+        float: left;
+        
+        margin-right:20PX;
+    }
+    .project-item h3{
+        margin-top: 0;
+    }
+    .container1 , .container2{
+        float: left;
+        width: 50%;
+     
+    }
+   .container2 {
+      
+       margin-left: -20px;
+   }
+   .work-item{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap:20px;
+}
+  
+    
+}
+@media screen and (max-width:939px){
+    h1{
+        font-size: 70px;
+        line-height: 0.9;
+        margin-bottom: 20px;
+    }
+    h2{
+        line-height: 1;
+    }
+ 
+
+}
+@media screen and (max-width:749px) {
+    .education {
+        padding: 10px;
+    }
+    
+}
+@media screen and (min-width:660px) {
+    .contact-list {
+        display: flex;
+      padding: 0;
+      justify-content: center;
+    }
+    
+}
+ 
