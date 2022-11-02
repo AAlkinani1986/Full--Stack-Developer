@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template String</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="login">
+      <h1>Using template String</h1>
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" />
+      <label for="price">Price:</label>
+      <input type="number" name="price" id="price" />
+      <button onclick="createEmail()">Print Email</button>
+    </div>
+    <script>
+      function createEmail() {
+        const shipping = 5.95
+        var fname, price
+        fname = document.getElementById('fname').value
+        price = document.getElementById('price').value
+        if (!fname) alert('please enter the value for the first name')
+
+        if (!price) alert('please enter the value for the price value')
+        let result = document.createElement('div')
+        if (price && fname) {
+          result.classList.add('result')
+          const email = ` <p>
+          Hi ${fname}! Thanks!
+          Total: $${price}
+          Shipping: $${shipping}
+          Grand Total: $${price + shipping}
+           </p>                  
+          `
+          result.innerHTML = email
+          let form = document.querySelector('div')
+          form.lastChild.remove()
+          form.append(result)
+        }
+      }
+    </script>
+  </body>
+</html>
