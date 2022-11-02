@@ -1,23 +1,19 @@
-const backpack = {
-name: "Everyday Backpack",
-valume: 30,
-color: "red",
-pocketNum: 15,
-straplength:{
-    left: 26,
-    right: 26,
-},
-lidOpen: false,
-toggleLid: function(lidStatus){
-    this.lidOpen = lidStatus;
-    updateBackpack("lid status has changed.");
-},
-newStrapLength: function (lengthLeft, LengthRight){
-this.straplength.left = lengthLeft;
-this.straplength.right = LengthRight;
-updateBackpack('Strap Lengths updated.')
-},
-}
+import Backpack from "./Backpack.js";
+const updateBackpack = (update) => {
+    let main = document.querySelector("main");
+    main.innerHTML = markup(backpack);
+    console.info(update);
+  };
+
+const backpack = new Backpack(
+    "Everyday Backpack",
+  30,
+  "grey",
+  15,
+  26,
+  26,
+  false, 
+);
 const markup = (backpack) =>{
     return `
     <div>
@@ -26,7 +22,7 @@ const markup = (backpack) =>{
     <li> Valume: ${backpack.name} </li>
     <li> Color: ${backpack.color} </li>
     <li> Number of pockets: ${backpack.pocketNum} </li>
-    <li> Strap length: L: ${backpack.straplength.left},R: ${backpack.straplength.right} </li>
+    <li> Strap length: L: ${backpack.straplengthL},R: ${backpack.straplengthR} </li>
     <li> Top lid: ${backpack.lidStatus ? "open" : "close"} </li>
 
     </ul>
